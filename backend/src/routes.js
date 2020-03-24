@@ -1,22 +1,13 @@
 const express = require('express');
+const OngController = require('./controllers/OngController');
+const IncidentController = require('./controllers/IncidentController');
 
 const routes = express.Router();
 
-routes.get('/', (request, response) => {
-  return response.json({
-      message: 'Hello World!'
-  });
-});
+routes.get('/ongs', OngController.index);
+routes.post('/ongs', OngController.create);
 
-routes.post('/users', (request, response) => {
-  const body = request.body;
-
-  console.log(body);
-  
-  return response.json({
-      message: 'Semana OminiStack 11.0!',
-      aluno: 'Márcio Dias'
-  });
-});
+routes.get('/incidents', IncidentController.index);
+routes.post('/incidents', IncidentController.create);
 
 module.exports = routes;
