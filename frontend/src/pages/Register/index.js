@@ -14,7 +14,7 @@ export default function Register() {
   const [city, setCity] = useState('')
   const [uf, setUf] = useState('')
 
-  const history = useHistory()
+  const history = useHistory();
 
   async function handleRegister(e) {
     e.preventDefault()
@@ -38,6 +38,8 @@ export default function Register() {
     }
 
   }
+
+
 
   return (
     <div className="register-container">
