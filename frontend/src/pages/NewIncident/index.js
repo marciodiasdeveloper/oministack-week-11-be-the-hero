@@ -32,16 +32,13 @@ export default function NewIncident() {
         headers: {
           Authorization: ongId,
         }
-      })
+      });
 
       history.push('/profile')
-
     } catch (error) {
       alert('Erro ao cadastrar caso, tente novamente')
       console.error(error)
     }
-
-
   }
 
   return (
@@ -55,8 +52,8 @@ export default function NewIncident() {
             Descreva o caso detalhadamente para encontrar um herói para resolver isso.
         </p>
 
-          <Link className="back-link" to="/profile">
-            <FiArrowLeft size={16} color="#e02041" />
+        <Link className="back-link" to="/profile">
+          <FiArrowLeft size={16} color="#e02041" />
           Voltar para home
         </Link>
         </section>
@@ -74,14 +71,11 @@ export default function NewIncident() {
             onChange={e => setDescription(e.target.value)}
           />
 
-
           <input
             placeholder="Valor em reais"
             value={value}
             onChange={e => setValue(e.target.value)}
           />
-
-
 
           <button className="button" type="submit">Cadastrar</button>
         </form>
